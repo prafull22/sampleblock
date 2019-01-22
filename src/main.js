@@ -47,7 +47,7 @@ function paintMap() {
 	var url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
 		address.split(' ').join('+') + '&size=' + width + 'x' + height + '&zoom=' + zoom +
 		'&markers=' + address.split(' ').join('+') + '&key=' + mapsKey;
-	sdk.setContent('<a href="' + link + '"><img src="' + url + '" /></a>');
+	sdk.setContent('<a href="https://www.google.com/">Go to google</a>');
 	sdk.setData({
 		address: address,
 		width: width,
