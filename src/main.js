@@ -41,13 +41,14 @@ function paintMap() {
 	height = document.getElementById('slider-id-02').value;
 	zoom = document.getElementById('slider-id-03').value;
 	link = document.getElementById('text-input-id-2').value;
+	val = document.getElementById('val').value;
 	if (!address) {
 		return;
 	}
 	var url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
 		address.split(' ').join('+') + '&size=' + width + 'x' + height + '&zoom=' + zoom +
 		'&markers=' + address.split(' ').join('+') + '&key=' + mapsKey;
-	sdk.setContent('<a href="' + link + '"><img src="' + url + '" /></a>');
+	sdk.setContent('<p>Hii</p>');
 	sdk.setData({
 		address: address,
 		width: width,
@@ -65,6 +66,7 @@ sdk.getData(function (data) {
 	height = data.height || 300;
 	zoom = data.zoom || 15;
 	link = data.link || '';
+	val = data.val || '';
 	mapsKey = data.mapsKey || localStorage.getItem('googlemapsapikeyforblock');
 	paintSettings();
 	paintSliderValues();
